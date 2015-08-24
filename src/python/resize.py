@@ -13,6 +13,3 @@ for index, row in trainingLabels.iterrows():
   images.append(im)
   newFileName = './data/train/resized/' + str(row['ID']) + '.bmp'
   im.save(newFileName)
-  #pixels = im.load()
-  #images.append()
-  #break
