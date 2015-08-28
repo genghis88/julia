@@ -15,7 +15,7 @@ for fName in files:
   im = Image.open(fileName)
   im = im.resize((20, 20), Image.ANTIALIAS)
   #convert from color to black and white
-  im = im.convert('1')
+  im = im.convert('L')
   images.append(im)
   newFileName = outputDir + fName[0:fName.index('.Bmp')] + '.png'
   im.save(newFileName)

@@ -28,6 +28,8 @@ def writeToFile(files, y, predictionsFile):
 
 files = [ f for f in listdir(inputDir) if isfile(join(inputDir,f)) ]
 
+files = map(lambda fileNumber: str(fileNumber) + '.png', sorted(map(lambda name: int(name[:name.index('.png')]), files)))
+
 testingData = []
 for fName in files:
   fileName = join(inputDir,fName)
@@ -38,4 +40,5 @@ for fName in files:
 model = open(modelFile,'rb')
 clf = pickle.load(model)
 y = clf.predict(testingData)
+print y
 writeToFile(files,y,predictionsFile)
